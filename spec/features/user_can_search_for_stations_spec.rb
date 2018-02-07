@@ -5,7 +5,7 @@ describe "As a user" do
     context "And enter a zipcode (80203) into the search bar and click Locate" do
       it "will return a list of the 10 closest stations" do
         visit "/"
-        fill_in "search", with: 80203
+        fill_in "zipcode", with: 80203
         click_on "Locate"
 
         expect(current_path).to eq "/search"
@@ -14,7 +14,7 @@ describe "As a user" do
         expect(page).to have_content "Propane"
         expect(page).to have_css(".station", count: 10)
 
-        within(first(".station")).first do
+        within(first(".station")) do
           expect(page).to have_css(".name")
           expect(page).to have_css(".address")
           expect(page).to have_css(".fuel_type")
