@@ -10,8 +10,6 @@ describe "As a user" do
 
         expect(current_path).to eq "/search"
         expect(page).to have_content "1 closest stations"
-        # expect(page).to have_content "Electric"
-        # expect(page).to have_content "Propane"
         expect(page).to have_css(".station", count: 1)
 
         within(first(".station")) do
