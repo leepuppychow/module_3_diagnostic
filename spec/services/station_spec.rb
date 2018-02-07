@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe Station do
-  let(:station) {Station.new({name: "station1",
-                              address: "here",
-                              fuel_type: "electric",
-                              access_times: "everyday",
+  let(:station) {Station.new({station_name: "station1",
+                              street_address: "here",
+                              fuel_type_code: "electric",
+                              access_days_time: "everyday",
                               distance: 5
                   })}
 
