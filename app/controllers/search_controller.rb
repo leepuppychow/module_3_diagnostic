@@ -4,7 +4,11 @@ class SearchController < ApplicationController
     connection = Faraday.get("https://developer.nrel.gov/api/alt-fuel-stations/v1.json?zip=#{zipcode}&radius=6&fuel_type=LPG,ELEC&limit=10&api_key=#{ENV["NREL_API_KEY"]}&format=JSON")
     response = JSON.parse(connection.body, symbolize_names: true)
 
-    binding.pry
+    stations = response[:fuel_stations]
+    @stations = stations.map do |station|
+      Station.new(station)
+    end
+
   end
 
 
