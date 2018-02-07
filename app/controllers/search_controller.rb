@@ -4,7 +4,6 @@ class SearchController < ApplicationController
     @stations = StationService.new(zipcode).stations
   end
 
-
   private
 
     def zipcode

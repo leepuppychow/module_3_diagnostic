@@ -1,5 +1,4 @@
 class Station
-
   attr_reader :name,
               :address,
               :fuel_type,
@@ -13,6 +12,4 @@ class Station
     @access_times = attributes[:access_days_time]
     @distance = attributes[:distance]
   end
-
-
 end

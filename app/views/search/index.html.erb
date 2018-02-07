@@ -1,11 +1,11 @@
 <h3> <%= @stations.count %> closest stations</h3>
 
-<%= @stations.each do |station| %>
+<% @stations.each do |station| %>
   <div class="station">
     <li class="name"> <%=station.name  %> </li>
     <li class="address"> <%=station.address  %> </li>
     <li class="fuel_type"> <%=station.fuel_type  %> </li>
-    <li class="distance"> <%=station.distance  %> </li>
     <li class="access_times"> <%=station.access_times  %> </li>
+    <li class="distance"> <%=station.distance  %> </li>
   </div>
 <% end %>
